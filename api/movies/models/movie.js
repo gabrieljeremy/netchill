@@ -1,20 +1,48 @@
 const mongoose = require('mongoose');
 
-var schema = new mongoose.Schema({
-    vote_count: Number,
-    id: Number,
-    video: Boolean,
-    vote_average: Number,
-    title: String,
-    popularity: Number,
-    poster_path: String,
-    original_language: String,
-    original_title: String,
+const Schema = mongoose.Schema;
+const schema = new Schema({
+    vote_count: {
+        type: Number
+    },
+    id: {
+        type: Number,
+        unique: true
+    },
+    video: {
+        type: Boolean
+    },
+    vote_average: {
+        type: Number
+    },
+    title: {
+        type: String
+    },
+    popularity: {
+        type: Number
+    },
+    poster_path: {
+        type: String
+    },
+    original_language: {
+        type: String
+    },
+    original_title: {
+        type: String
+    },
     genre_ids: [],
-    backdrop_path: String,
-    adult: Boolean,
-    overview: String,
-    release_Date: String
+    backdrop_path: {
+        type: String
+    },
+    adult: {
+        type: Boolean
+    },
+    overview: {
+        type: String
+    },
+    release_date: {
+        type: String
+    }
 });
 
 module.exports = mongoose.model('Movie', schema);
